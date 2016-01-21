@@ -57,10 +57,7 @@ var StorageTileLayer = L.TileLayer.extend({
 
         tile.alt = "";//Alt tag is set to empty string to keep screen readers from reading URL and for compliance reasons
 
-        var x = coords.x,
-            y = this.options.tms ? this._globalTileRange.max.y - coords.y : coords.y,
-            z = this._getZoomForUrl(),
-            key = z + ',' + x + ',' + y,
+        var key = coords.z + ',' + coords.x + ',' + coords.y,
             self = this;
         if (this.options.storage) {
             this.options.storage.getAttachment(key,'map', function (err, value) {
@@ -123,7 +120,7 @@ var app ={
              zoom: config.viewStart.zoom,
              bounceAtZoomLimits: false
          });
-         
+
          new StorageTileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {storage: app.db}).addTo(app.map);
 
 
