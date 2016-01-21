@@ -8,7 +8,7 @@ Pulls all tiles in a box to zoom level 14
 
 ## Demo
 [Demo](http://foxusa.github.io/OfflineMap/)
-Clicking the C icon will cache the Phoenix area
 
+Clicking the C icon will cache the Phoenix area
 
 Clicking the D will destroy the local cache
